@@ -4,27 +4,29 @@ module.exports = {
     name: 'bound',
     description: "Bound Voice Channel to Timer",
     aliases: ['link', 'b'],
-    args: false,
+    args: true,
+    args_min_length: 1,
+    usage: "[time index]",
     guildOnly: true,
     dmOnly: false,
     restricted: true,
     execute(message, args) {
-        let channel = message.guild.channels.cache.get(config.bday_channel);
+        const channel = message.guild.channels.cache.get(config.bday_channel);
+        const log = message.guild.channels.cache.get(config.log_channel);
         if (channel === undefined) {
             return message.reply("Can't find the given channel id");
         }
 
         let now = new Date();
-        let bday = new Date(config.bday_time);
+        let bday = new Date(config.time[args[0]]);
 
         let diff;
         let days;
         let hours;
         let mins;
         let out;
+        const prefix_out = "Join in "
 
-        console.log("start")
-        message.reply("Bot started");
         function loop() {
             now = new Date();
             bday = new Date(config.bday_time);
@@ -36,10 +38,10 @@ module.exports = {
 
             if (diff <= 0) {
                 console.log("stop")
-                channel.setName("Bday NOW");
+                channel.setName("JOIN NOW");
                 channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: true});
                 clearInterval(timerID);
-                return message.reply("Bday is now free");
+                return message.reply("Voice channel is now free");
             }
 
             days = Math.floor(diff / (60 * 24));
@@ -47,13 +49,15 @@ module.exports = {
             mins = diff % 60
 
             out = format(days, hours, mins)
-            channel.setName(out);
-            console.log("format: " + out);
+            channel.setName(prefix_out + out);
+            log.send("format: " + out);
         }
         const timerID = setInterval(loop, 5 * 60 * 1000);
+        console.log("start")
+        message.reply("Bot started! End at: " + config.time[args[0]]);
 
         function format(days, hours, mins) {
-            let out = "Bday ";
+            let out = "";
             if (days !== 0) {
                 out += days + "d ";
             }
