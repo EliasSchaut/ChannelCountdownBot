@@ -29,7 +29,7 @@ module.exports = {
 
         function loop() {
             now = new Date();
-            bday = new Date(config.bday_time);
+            bday = new Date(config.time[args[0]]);
 
             diff = (bday.getTime() - now.getTime()) / 1000;
             diff /= 60;
