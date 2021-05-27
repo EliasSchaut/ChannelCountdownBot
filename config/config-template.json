@@ -5,6 +5,6 @@
   "lang": "en",
   "admin_ids": [ ],
 
-  "log": true,
-  "log_channel": ""
+  "log": false,
+  "log_channel": "CHANNEL_ID"
 }
