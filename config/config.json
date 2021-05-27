@@ -1,10 +1,10 @@
 {
-  "prefix": "*bday",
+  "prefix": "bday*",
   "token": "ODQyMTIwMzc4MzUyNTMzNTM0.YJwruA.65--YSKhsjPFofYY70wwXB6RK68",
   "commands_path": "./commands",
   "lang": "en",
   "admin_ids": [ "501805867369496576" ],
-  "bday_channel": "842123461816090685",
-  "log_channel": "838110314272784394",
-  "time": [ "June 03, 2021 17:55:00", "June 03, 2021 23:49:00" ]
+
+  "log": true,
+  "log_channel": "838110314272784394"
 }

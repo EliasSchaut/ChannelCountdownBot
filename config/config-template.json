@@ -3,5 +3,8 @@
   "token": "YOUR_TOKEN",
   "commands_path": "./commands",
   "lang": "en",
-  "admin_ids": [ ]
+  "admin_ids": [ ],
+
+  "log": true,
+  "log_channel": ""
 }
