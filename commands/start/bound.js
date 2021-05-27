@@ -2,7 +2,7 @@ const timer = require("../../js/timer.js")
 
 module.exports = {
     name: 'bound',
-    description: "Bound Voice Channel to Timer",
+    description: "Bound existent voice channel to timer",
     aliases: ['link', 'b'],
     args: true,
     args_min_length: 1,
@@ -13,7 +13,7 @@ module.exports = {
     execute(message, args) {
         args = args.join(" ").split("|")
         if (args.length !== 2) {
-            return message.reply("Wrong args. You should use this format: [channel_id],[time_format]");
+            return message.reply("Wrong args. You should use this format: [channel_id]|[time_format]");
         }
 
         const channel = message.guild.channels.cache.get(args[0].trim());

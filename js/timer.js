@@ -54,9 +54,10 @@ function timer(message, channel, time_format) {
     // -----------------------------------
     // Start Loop
     // -----------------------------------
-    const timerID = setInterval(loop, 5 * 60 * 1000);loop();
+    const timerID = setInterval(loop, 5 * 60 * 1000);
     console.log("start")
     message.reply("Bot started! End at: " + time_format);
+    loop();
     // -----------------------------------
 
 
@@ -80,4 +81,4 @@ function timer(message, channel, time_format) {
     // -----------------------------------
 }
 
-module.exports = {timer}
+module.exports = { timer }
