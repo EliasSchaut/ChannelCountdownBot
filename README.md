@@ -6,6 +6,8 @@ This bot can run the following commands (and more like `help`):
 * ```bound```: Bound a voice channel to this bot. The bot will set the name of the channel to `Join in [time]`, 
   where `[time]` represents the time until a given js date format. Every five minutes the bot will rename the channel with the new remaining time.\
   If the remaining time is nearly zero, the bot will rename the channel to `JOIN NOW` and finish its process.\
+* `create`: Same as `bound`, but the bot will create an own voice channel instead of bounding to an existent
+* `stop`: Stop all running timers.
 
 ## Preparations
 * You need [node.js](https://nodejs.org/en/) and [discord.js](https://discord.js.org/#/) installed.
