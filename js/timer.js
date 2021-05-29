@@ -1,4 +1,5 @@
 const config = require('../config/config.json')
+const text = require(`../../config/text_${config.lang}.json`).timer
 let current_timers = []
 
 
@@ -13,7 +14,7 @@ function timer(message, channel, time_format) {
     const log = message.guild.channels.cache.get(config.log_channel);
     let now = new Date();
     let bday = new Date(time_format);
-    if (isNaN(bday.getTime())) return message.reply("your time format is wrong!")
+    if (isNaN(bday.getTime())) return message.reply("")
 
     let diff;
     let days;
@@ -41,7 +42,7 @@ function timer(message, channel, time_format) {
             channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: true});
             clearInterval(timerID);
             current_timers.slice(current_timers.indexOf(timerID), 1)
-            return message.reply("Voice channel is now free");
+            return message.reply(text.wrong_format);
         }
 
         days = Math.floor(diff / (60 * 24));
@@ -51,7 +52,7 @@ function timer(message, channel, time_format) {
         out = format(days, hours, mins)
         channel.setName(prefix_out + out);
         if (config.log) {
-            log.send("format: " + out);
+            log.send("Format: " + out);
         }
     }
     // -----------------------------------
@@ -63,7 +64,7 @@ function timer(message, channel, time_format) {
     const timerID = setInterval(loop, 5 * 60 * 1000);
     current_timers.push(timerID)
     console.log("start")
-    message.reply("Bot started! End at: " + time_format);
+    message.reply(text.started + time_format);
     loop();
     // -----------------------------------
 

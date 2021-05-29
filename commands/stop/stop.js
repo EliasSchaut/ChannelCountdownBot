@@ -1,4 +1,6 @@
 const timer = require("../../js/timer.js")
+const { lang } = require('../../config/config.json')
+const text = require(`../../config/text_${lang}.json`).commands.stop
 
 module.exports = {
     name: 'stop',
@@ -10,6 +12,6 @@ module.exports = {
     restricted: true,
     execute(message, args) {
         timer.stop_all()
-        message.channel.send("All timers stopped!!")
+        message.channel.send(text.stopped)
     }
 }

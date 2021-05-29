@@ -1,13 +1,14 @@
 const timer = require("../../js/timer.js")
 const config = require('../../config/config.json')
+const text = require(`../../config/text_${config.lang}.json`).commands.create
 
 module.exports = {
     name: 'create',
-    description: "create voice channel and bound to timer",
+    description: text.help,
     aliases: ['start', 'c'],
     args: true,
     args_min_length: 1,
-    usage: "[time_format]",
+    usage: text.usage,
     guildOnly: true,
     dmOnly: false,
     restricted: true,

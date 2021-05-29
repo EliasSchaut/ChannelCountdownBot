@@ -7,6 +7,11 @@
     "missing_args_proper_use": "The proper usage would be: ",
     "error": "There was an error trying to execute that command! Ask the holy Ilias for help!"
   },
+  "timer": {
+    "wrong_format": "your time format is wrong!",
+    "started": "Bot started! End at: "
+  },
+
   "commands": {
     "echo": {
       "help": "Sends back the arguments.",
@@ -45,6 +50,20 @@
       "invalid_command": "There is no command with this name or alias",
       "success": "was reloaded!",
       "fail": "There was an error while reloading a command"
+    },
+    "bound": {
+      "help": "Bound existent voice channel to timer",
+      "usage": "[channel_id]|[time_format]",
+      "wrong_args": "Wrong args. You should use this format: ",
+      "can't_find_channel": "Can't find the given channel id"
+    },
+    "create": {
+      "help": "Create a voice channel and bound it to timer",
+      "usage": "[time_format]"
+    },
+    "stop": {
+      "help": "Stop all timers",
+      "stopped": "All timers stopped!!"
     }
   }
 }

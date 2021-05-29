@@ -7,6 +7,11 @@
     "missing_args_proper_use": "Die korrekte Verwendung wäre: ",
     "error": "Es gab einen Fehler beim Versuch, diesen Befehl auszuführen!"
   },
+  "timer": {
+    "wrong_format": "Das Zeitformat ist falsch!",
+    "started": "Bot gestartet! Ende in: "
+  },
+
   "commands": {
     "echo": {
       "help": "Sendet die übergebenen Argumente zurück.",
@@ -45,6 +50,20 @@
       "invalid_command": "Es gibt keinen Befehl mit diesem Namen oder Alias",
       "success": "wurde neu geladen!",
       "fail": "Es gab einen Fehler beim Nachladen des Befehls"
+    },
+    "bound": {
+      "help": "Vorhandenen Sprachkanal an Timer binden",
+      "usage": "[kanal_id]|[zeit_format]",
+      "wrong_args": "Falsche Argumente. Sie sollten dieses Format verwenden: ",
+      "can't_find_channel": "Die übergebene Kanal-ID konnte nicht gefunden werden!"
+    },
+    "create": {
+      "help": "Erstelle einen Sprachkanal und binde ihn an einen Timer",
+      "usage": "[zeit_format]"
+    },
+    "stop": {
+      "help": "Alle Timer stoppen",
+      "stopped": "Alle Timer gestoppt!"
     }
   }
 }
