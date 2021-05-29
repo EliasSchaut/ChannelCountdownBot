@@ -4,6 +4,7 @@
   "commands_path": "./commands",
   "lang": "en",
   "admin_ids": [ ],
+  "bot_id": "THE_BOTS_DISCORD_ID",
 
   "log": false,
   "log_channel": "CHANNEL_ID"
