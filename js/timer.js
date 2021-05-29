@@ -6,12 +6,12 @@ let current_timers = []
 // -----------------------------------
 // Start
 // -----------------------------------
-function timer(message, channel, time_format) {
+async function timer(message, channel, time_format) {
 
     // -----------------------------------
     // Needed Variables
     // -----------------------------------
-    const log = message.guild.channels.cache.get(config.log_channel);
+    const log = await message.guild.channels.cache.get(config.log_channel);
     let now = new Date();
     let bday = new Date(time_format);
     if (isNaN(bday.getTime())) return message.reply("")
