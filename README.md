@@ -17,10 +17,12 @@ This bot can run the following commands (and more like `help`):
 ## Configuration
 1. Rename the configuration file *(/config/config-template.json)* from ```config-template.json``` to ```config.json```
 2. Open the configuration file (now ```config.json```) and set:
-    * your bots prefix
-    * your bots token
-    * your admin id's: Enter a discord user id in quotation marks and separate several with a comma ```[ "<id>", "<id>", ..., "<id>"]```.\
-      These are the only users who have the permission to execute the restricted commands of this bot.
+    * your bots ``prefix``
+    * your bots ``token``
+    * your ``admin id's``: Enter a discord user id in quotation marks and separate several with a comma ```[ "<id>", "<id>", ..., "<id>"]```.\
+      These are the only users who have the permission to execute the commands of this bot.
+    * Set `bot_id` to the bot role id in the server (or to a role id, the bot holds).
+    * **OPTIONAL**: Change `lang` from `en` to `de` for german instead of english language.  
     * **OPTIONAL**: Set a log channel: Set `log` to `true` and set the `channel_id` of the wanted channel.
 3. Run ```npm install```.
 
