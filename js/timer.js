@@ -1,5 +1,10 @@
 const config = require('../config/config.json')
+let current_timers = []
 
+
+// -----------------------------------
+// Start
+// -----------------------------------
 function timer(message, channel, time_format) {
 
     // -----------------------------------
@@ -35,6 +40,7 @@ function timer(message, channel, time_format) {
             channel.setName("JOIN NOW");
             channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: true});
             clearInterval(timerID);
+            current_timers.slice(current_timers.indexOf(timerID), 1)
             return message.reply("Voice channel is now free");
         }
 
@@ -55,6 +61,7 @@ function timer(message, channel, time_format) {
     // Start Loop
     // -----------------------------------
     const timerID = setInterval(loop, 5 * 60 * 1000);
+    current_timers.push(timerID)
     console.log("start")
     message.reply("Bot started! End at: " + time_format);
     loop();
@@ -80,5 +87,20 @@ function timer(message, channel, time_format) {
     }
     // -----------------------------------
 }
+// -----------------------------------
 
-module.exports = { timer }
+
+
+// -----------------------------------
+// Stop
+// -----------------------------------
+function stop_all() {
+    for (const timerID of current_timers) {
+        clearInterval(timerID)
+    }
+    console.log("Timers Stopped")
+}
+// -----------------------------------
+
+
+module.exports = { timer, stop_all }
