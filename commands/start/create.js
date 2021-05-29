@@ -12,10 +12,10 @@ module.exports = {
     guildOnly: true,
     dmOnly: false,
     restricted: true,
-    async execute(message, args) {
+    execute(message, args) {
 
         // create channel
-        const channel = await message.guild.channels.create('Join in', {
+        message.guild.channels.create('Join in', {
             type: 'voice',
             permissionOverwrites: [
                 {
@@ -28,8 +28,6 @@ module.exports = {
                     allow: ['CONNECT', 'VIEW_CHANNEL']
                 },
             ],
-        })
-
-        timer.timer(message, channel, args.join(" "))
+        }).then(channel => timer.timer(message, channel, args.join(" ")))
     }
 }
