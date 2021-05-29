@@ -13,15 +13,15 @@ module.exports = {
     execute(message, args) {
         args = args.join(" ").split("|")
         if (args.length !== 2) {
-            return message.reply("Wrong args. You should use this format: [channel_id]|[time_format]");
+            return message.reply("Wrong args. You should use this format: [channel_id]|[time_format]")
         }
 
-        const channel = message.guild.channels.cache.get(args[0].trim());
+        const channel = message.guild.channels.cache.get(args[0].trim())
         if (channel === undefined) {
-            return message.reply("Can't find the given channel id");
+            return message.reply("Can't find the given channel id")
         }
 
-        channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: false});
+        channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: false})
         timer.timer(message, channel, args[1].trim())
     },
 };
