@@ -1,5 +1,5 @@
 const config = require('../config/config.json')
-const text = require(`../../config/text_${config.lang}.json`).timer
+const text = require(`../config/text_${config.lang}.json`).timer
 let current_timers = []
 
 
