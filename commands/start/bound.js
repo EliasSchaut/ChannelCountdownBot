@@ -1,4 +1,5 @@
 const timer = require("../../js/timer.js")
+const config = require('../../config/config.json')
 
 module.exports = {
     name: 'bound',
@@ -22,6 +23,7 @@ module.exports = {
         }
 
         channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: false})
+        channel.updateOverwrite(config.bot_id, {CONNECT: true})
         timer.timer(message, channel, args[1].trim())
     },
 };
