@@ -9,7 +9,8 @@
   },
   "timer": {
     "wrong_format": "Das Zeitformat ist falsch!",
-    "started": "Bot gestartet! Ende am: "
+    "started": "Bot gestartet! Ende am: ",
+    "stopped": "Bot gestoppt! Ende erreicht!"
   },
 
   "commands": {

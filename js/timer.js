@@ -42,7 +42,7 @@ async function timer(message, channel, time_format) {
             channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: true});
             clearInterval(timerID);
             current_timers.slice(current_timers.indexOf(timerID), 1)
-            return message.reply(text.wrong_format);
+            return message.reply(text.stopped);
         }
 
         days = Math.floor(diff / (60 * 24));
