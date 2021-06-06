@@ -6,6 +6,8 @@
   "admin_ids": [ ],
   "bot_id": "THE_BOTS_DISCORD_ID",
 
+  "allow_connect": false,
+  "allow_stream": true,
   "log": false,
   "log_channel": "CHANNEL_ID"
 }

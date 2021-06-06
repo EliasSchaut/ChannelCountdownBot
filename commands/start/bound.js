@@ -18,12 +18,18 @@ module.exports = {
             return message.reply(text.wrong_args + text.usage)
         }
 
+        console.log(args[0])
         const channel = message.guild.channels.cache.get(args[0].trim())
         if (channel === undefined) {
             return message.reply(text["can't_find_channel"])
         }
 
-        channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: false})
+        if (!config.allow_connect) {
+            channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: false})
+        }
+        if (!config.allow_stream) {
+            channel.updateOverwrite(channel.guild.roles.everyone, {STREAM: false})
+        }
         channel.updateOverwrite(config.bot_id, {CONNECT: true})
         timer.timer(message, channel, args[1].trim())
     },

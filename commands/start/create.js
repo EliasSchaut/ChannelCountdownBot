@@ -1,6 +1,7 @@
 const timer = require("../../js/timer.js")
 const config = require('../../config/config.json')
 const text = require(`../../config/text_${config.lang}.json`).commands.create
+const bound = require("./bound.js")
 
 module.exports = {
     name: 'create',
@@ -20,7 +21,6 @@ module.exports = {
             permissionOverwrites: [
                 {
                     id: message.guild.roles.everyone,
-                    deny: ['CONNECT', 'STREAM'],
                     allow: ['VIEW_CHANNEL']
                 },
                 {
@@ -28,6 +28,15 @@ module.exports = {
                     allow: ['CONNECT', 'VIEW_CHANNEL']
                 },
             ],
-        }).then(channel => timer.timer(message, channel, args.join(" ")))
+        }).then(channel => function () {
+            if (!config.allow_connect) {
+                channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: false})
+            }
+            if (!config.allow_stream) {
+                channel.updateOverwrite(channel.guild.roles.everyone, {STREAM: false})
+            }
+            timer.timer(message, channel, args[0])
+        })
+
     }
 }
