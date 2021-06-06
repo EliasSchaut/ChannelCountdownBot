@@ -11,7 +11,13 @@ async function timer(message, channel, time_format) {
     // -----------------------------------
     // Needed Variables
     // -----------------------------------
-    const log = await message.guild.channels.cache.get(config.log_channel);
+    let log = ""
+    if (config.log) {
+        log = await message.guild.channels.cache.get(config.log_channel);
+        if (log === undefined) {
+            config.log = false
+        }
+    }
     let now = new Date();
     let bday = new Date(time_format);
     if (isNaN(bday.getTime())) return message.reply("")
@@ -37,10 +43,10 @@ async function timer(message, channel, time_format) {
         console.log("diff: " + diff)
 
         if (diff <= 0) {
+            clearInterval(timerID);
             console.log("stop")
             channel.setName("JOIN NOW");
             channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: true});
-            clearInterval(timerID);
             current_timers.slice(current_timers.indexOf(timerID), 1)
             return message.reply(text.stopped);
         }
@@ -50,9 +56,16 @@ async function timer(message, channel, time_format) {
         mins = diff % 60
 
         out = format(days, hours, mins)
-        channel.setName(prefix_out + out);
+        channel.setName(prefix_out + out)
+            .catch(e => {
+                clearInterval(timerID)
+                return message.reply(text.error)
+            })
         if (config.log) {
-            log.send("Format: " + out);
+            log.send("Format: " + out)
+                .catch(e => {
+                    config.log = false
+                });
         }
     }
     // -----------------------------------
@@ -96,10 +109,14 @@ async function timer(message, channel, time_format) {
 // Stop
 // -----------------------------------
 function stop_all() {
+    const num_of_timers = current_timers.length;
     for (const timerID of current_timers) {
         clearInterval(timerID)
     }
-    console.log("Timers Stopped")
+    current_timers = []
+
+    console.log("Timers Stopped (" + num_of_timers + ")")
+    return num_of_timers
 }
 // -----------------------------------
 

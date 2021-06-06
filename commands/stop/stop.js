@@ -11,7 +11,7 @@ module.exports = {
     dmOnly: false,
     restricted: true,
     execute(message, args) {
-        timer.stop_all()
-        message.channel.send(text.stopped)
+        const num_of_timers = timer.stop_all()
+        message.channel.send(text.stopped + " (" + num_of_timers + ")")
     }
 }

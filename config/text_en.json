@@ -9,8 +9,9 @@
   },
   "timer": {
     "wrong_format": "your time format is wrong!",
-    "started": "Bot started! End at: ",
-    "stopped": "Bot stopped! End reached!"
+    "started": "Countdown started! End at: ",
+    "stopped": "Countdown stopped! End reached!",
+    "error": "Countdown stopped! An error occurred!"
   },
 
   "commands": {

@@ -13,10 +13,10 @@ module.exports = {
     guildOnly: true,
     dmOnly: false,
     restricted: true,
-    execute(message, args) {
+    async execute(message, args) {
 
         // create channel
-        message.guild.channels.create('Join in', {
+        const channel = await message.guild.channels.create('Join in', {
             type: 'voice',
             permissionOverwrites: [
                 {
@@ -28,15 +28,14 @@ module.exports = {
                     allow: ['CONNECT', 'VIEW_CHANNEL']
                 },
             ],
-        }).then(channel => function () {
-            if (!config.allow_connect) {
-                channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: false})
-            }
-            if (!config.allow_stream) {
-                channel.updateOverwrite(channel.guild.roles.everyone, {STREAM: false})
-            }
-            timer.timer(message, channel, args[0])
         })
 
+        if (!config.allow_connect) {
+            await channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: false})
+        }
+        if (!config.allow_stream) {
+            await channel.updateOverwrite(channel.guild.roles.everyone, {STREAM: false})
+        }
+        await timer.timer(message, channel, args.join(" "))
     }
 }
