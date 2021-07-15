@@ -10,15 +10,16 @@ This bot can run the following commands (and more like `help`):
 * `stop`: Stop all running timers.
 
 ## Preparations
-* You need [node.js](https://nodejs.org/en/) and [discord.js](https://discord.js.org/#/) installed.
+* You need [node.js](https://nodejs.org/en/) installed.
 * You need a [Discord API Bot](https://discord.com/developers/applications) with its token.
 * You need a [Discord server](https://support.discord.com/hc/en-us/articles/204849977-How-do-I-create-a-server) on which you can set permissions, so you can invite the bot and give it the following permissions:
     * Manage Channels
     * Send Messages
 
 ## Configuration
-1. Rename the configuration file *(/config/config-template.json)* from ```config-template.json``` to ```config.json```
-2. Open the configuration file (now ```config.json```) and set:
+1. Download the code
+2. Rename the configuration file *(/config/config-template.json)* from ```config-template.json``` to ```config.json```
+3. Open the configuration file (now ```config.json```) and set:
     * your bots ``prefix``
     * your bots ``token``
     * your ``admin id's``: Enter a discord user id in quotation marks and separate several with a comma ```[ "<id>", "<id>", ..., "<id>"]```.\
@@ -26,7 +27,7 @@ This bot can run the following commands (and more like `help`):
     * Set `bot_id` to the bot role id in the server (or to a role id, the bot holds).
     * **OPTIONAL**: Change `lang` from `en` to `de` for german instead of english language.  
     * **OPTIONAL**: Set a log channel: Set `log` to `true` and set the `channel_id` of the wanted channel.
-3. Run ```npm install```.
+4. Run ```npm install```.
 
 ## Run
 Run ```index.js``` with ```npm start``` or ```node index.js```.
