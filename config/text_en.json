@@ -11,7 +11,9 @@
     "wrong_format": "your time format is wrong!",
     "started": "Countdown started! End at: ",
     "stopped": "Countdown stopped! End reached!",
-    "error": "Countdown stopped! An error occurred!"
+    "error": "Countdown stopped! An error occurred!",
+    "join_in":"Join in %d",
+    "join_now":"JOIN NOW!!!"
   },
 
   "commands": {
@@ -60,8 +62,8 @@
       "can't_find_channel": "Can't find the given channel id"
     },
     "create": {
-      "help": "Create a voice channel and bound it to timer",
-      "usage": "[time_format]"
+      "help": "Create a voice channel and bound it to timer. In the optional custom text %d stands for the remaining time.",
+      "usage": "[time_format](|[custom_text])"
     },
     "stop": {
       "help": "Stop all timers",

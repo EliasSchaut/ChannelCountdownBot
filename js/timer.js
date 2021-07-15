@@ -1,13 +1,16 @@
 const config = require('../config/config.json')
 const text = require(`../config/text_${config.lang}.json`).timer
 let current_timers = []
-
+const minutes_per_loop = 5
 
 // -----------------------------------
 // Start
 // -----------------------------------
 async function timer(message, channel, time_format) {
-
+    customTimer(message, channel, time_format, text.join_in)
+}
+async function customTimer(message, channel, time_format, title) {
+    //title magic keys: %t time
     // -----------------------------------
     // Needed Variables
     // -----------------------------------
@@ -27,7 +30,6 @@ async function timer(message, channel, time_format) {
     let hours;
     let mins;
     let out;
-    const prefix_out = "Join in "
     // -----------------------------------
 
 
@@ -45,7 +47,7 @@ async function timer(message, channel, time_format) {
         if (diff <= 0) {
             clearInterval(timerID);
             console.log("stop")
-            channel.setName("JOIN NOW");
+            channel.setName(text.join_now);
             channel.updateOverwrite(channel.guild.roles.everyone, {CONNECT: true});
             current_timers.slice(current_timers.indexOf(timerID), 1)
             return message.reply(text.stopped);
@@ -55,8 +57,9 @@ async function timer(message, channel, time_format) {
         hours = Math.floor((diff - (days * 60 * 24)) / 60);
         mins = diff % 60
 
-        out = format(days, hours, mins)
-        channel.setName(prefix_out + out)
+        d = format(days, hours, mins)
+        out = title.replace("%d", d)
+        channel.setName(out)
             .catch(e => {
                 clearInterval(timerID)
                 return message.reply(text.error)
@@ -74,36 +77,34 @@ async function timer(message, channel, time_format) {
     // -----------------------------------
     // Start Loop
     // -----------------------------------
-    const timerID = setInterval(loop, 5 * 60 * 1000);
+
+    const timerID = setInterval(loop, minutes_per_loop * 60 * 1000)
     current_timers.push(timerID)
     console.log("start")
     message.reply(text.started + time_format);
-    loop();
-    // -----------------------------------
-
 
     // -----------------------------------
-    // Helper
-    // -----------------------------------
-    function format(days, hours, mins) {
-        let out = "";
-        if (days !== 0) {
-            out += days + "d ";
-        }
-        if (hours !== 0) {
-            out += hours + "h ";
-        }
-        if (mins !== 0) {
-            out += mins + "min ";
-        }
-
-        return out;
-    }
-    // -----------------------------------
+    loop()
 }
 // -----------------------------------
 
+// -----------------------------------
+// Helper
+// -----------------------------------
+function format(days, hours, mins) {
+    let out = "";
+    if (days !== 0) {
+        out += days + "d ";
+    }
+    if (hours !== 0) {
+        out += hours + "h ";
+    }
+    if (mins !== 0) {
+        out += mins + "min ";
+    }
 
+    return out;
+}
 
 // -----------------------------------
 // Stop
@@ -121,4 +122,4 @@ function stop_all() {
 // -----------------------------------
 
 
-module.exports = { timer, stop_all }
+module.exports = { timer, stop_all, customTimer }
