@@ -15,8 +15,13 @@ module.exports = {
     restricted: true,
     async execute(message, args) {
 
+        args = args.join(" ").split("|")
+        
+        if (args.length < 1 || args.length > 2) {
+            return message.reply(text.wrong_args + text.usage)
+        }
         // create channel
-        const channel = await message.guild.channels.create('Join in', {
+        const channel = await message.guild.channels.create("...", {
             type: 'voice',
             permissionOverwrites: [
                 {
@@ -36,6 +41,12 @@ module.exports = {
         if (!config.allow_stream) {
             await channel.updateOverwrite(channel.guild.roles.everyone, {STREAM: false})
         }
-        await timer.timer(message, channel, args.join(" "))
+        if (args.length == 2) {
+            await timer.customTimer(message, channel, args[0], args[1])
+        }
+        if (args.length == 1) {
+            await timer.timer(message, channel, args[0])
+        }
     }
 }
+

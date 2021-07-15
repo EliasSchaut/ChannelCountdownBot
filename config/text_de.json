@@ -62,12 +62,8 @@
       "can't_find_channel": "Die übergebene Kanal-ID konnte nicht gefunden werden!"
     },
     "create": {
-      "help": "Erstelle einen Sprachkanal und binde ihn an einen Timer.",
-      "usage": "[zeit_format]"
-    },
-    "createcustom": {
-      "help": "Erstelle einen Sprachkanal mit einem coolen Namen (verwende %d für die Dauer) und binde ihn an einen Timer.",
-      "usage": "[custom_text]|[zeit_format]"
+      "help": "Erstelle einen Sprachkanal und binde ihn an einen Timer. Im optionalen custom text steht %d für die übrige Zeit.",
+      "usage": "[zeit_format](|[custom_text])"
     },
     "stop": {
       "help": "Alle Timer stoppen",

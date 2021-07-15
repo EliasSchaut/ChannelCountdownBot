@@ -1,7 +1,7 @@
 const config = require('../config/config.json')
 const text = require(`../config/text_${config.lang}.json`).timer
 let current_timers = []
-const seconds_per_loop = config.seconds_per_loop
+const minutes_per_loop = 5
 
 // -----------------------------------
 // Start
@@ -78,7 +78,7 @@ async function customTimer(message, channel, time_format, title) {
     // Start Loop
     // -----------------------------------
 
-    const timerID = setInterval(loop, seconds_per_loop * 1000)
+    const timerID = setInterval(loop, minutes_per_loop * 60 * 1000)
     current_timers.push(timerID)
     console.log("start")
     message.reply(text.started + time_format);

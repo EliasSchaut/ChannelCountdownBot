@@ -62,12 +62,8 @@
       "can't_find_channel": "Can't find the given channel id"
     },
     "create": {
-      "help": "Create a voice channel and bound it to timer",
-      "usage": "[time_format]"
-    },
-    "createcustom": {
-      "help": "Create a voice channel with a custom name (use %d for the duration) and bound it to timer",
-      "usage": "[custom_text]|[time_format]"
+      "help": "Create a voice channel and bound it to timer. In the optional custom text %d stands for the remaining time.",
+      "usage": "[time_format](|[custom_text])"
     },
     "stop": {
       "help": "Stop all timers",
