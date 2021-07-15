@@ -10,7 +10,7 @@ This bot can run the following commands (and more like `help`):
 * `stop`: Stop all running timers.
 
 ## Preparations
-* You need [node.js](https://nodejs.org/en/) and [discord.js](https://discord.js.org/#/) installed.
+* You need [node.js](https://nodejs.org/en/) installed.
 * You need a [Discord API Bot](https://discord.com/developers/applications) with its token.
 * You need a [Discord server](https://support.discord.com/hc/en-us/articles/204849977-How-do-I-create-a-server) on which you can set permissions, so you can invite the bot and give it the following permissions:
     * Manage Channels
