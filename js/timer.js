@@ -58,7 +58,8 @@ async function customTimer(message, channel, time_format, title) {
         mins = diff % 60
 
         d = format(days, hours, mins)
-        out = title.replace("%d", d)
+        s = formatShort(days, hours, mins)
+        out = title.replace("%d", d).replace("%s", s)
         channel.setName(out)
             .catch(e => {
                 clearInterval(timerID)
@@ -103,8 +104,24 @@ function format(days, hours, mins) {
         out += mins + "min ";
     }
 
-    return out;
+    return out.substr(0, out.length-1);
 }
+
+function formatShort(days, hours, mins) {
+    if (days !== 0) {
+        return days + "d";
+    }
+    if (hours !== 0) {
+        return hours + "h";
+    }
+    if (mins !== 0) {
+        return mins + "min";
+    }
+    return text.shortly
+}
+// -----------------------------------
+
+
 
 // -----------------------------------
 // Stop
