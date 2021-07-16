@@ -117,7 +117,7 @@ function formatShort(days, hours, mins) {
     if (mins !== 0) {
         return mins + "min";
     }
-    return text.shortly
+    return "0 min";
 }
 // -----------------------------------
 
