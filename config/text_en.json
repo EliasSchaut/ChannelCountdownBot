@@ -61,9 +61,9 @@
       "wrong_args": "Wrong args. You should use this format: ",
       "can't_find_channel": "Can't find the given channel id"
     },
-    "create": {
-      "help": "Create a voice channel and bound it to timer. In the optional custom text %d stands for the remaining time.",
-      "usage": "[time_format](|[custom_text])"
+    "create": {      
+      "help": "Create a voice channel and bind it to a timer. Optionally you can also specify the title of the channel (title). Just write '|' and the title behind it (no brackets!). Use %d for the exact time span until the event and %s for the shorter formatted time span.",
+      "usage": "[time_format](|[title])"
     },
     "stop": {
       "help": "Stop all timers",
