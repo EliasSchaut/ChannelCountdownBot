@@ -13,8 +13,7 @@
     "stopped": "Countdown gestoppt! Ende erreicht!",
     "error": "Countdown stopped! Ein Fehler trat auf!",
     "join_in": "in %d joinen",
-    "join_now": "JETZT JOINEN!!!",
-    "shortly": "in Kürze..."
+    "join_now": "JETZT JOINEN!!!"
   },
 
   "commands": {
