@@ -1,0 +1,111 @@
+{
+  "command_create": {
+    "error": "There was an error trying to execute that command!"
+  },
+  "error": {
+    "args_needed": "This command needs arguments! But you didn't submit any.",
+    "args_min_length": "This command takes at least %0 arguments! But you only submitted %1.",
+    "args_max_length": "This command can only be passed with a maximum of %0 arguments! But you have submitted %1.",
+    "cooldown": "There is a cooldown on this command. You have to wait another `%0` to be able to execute the command again.",
+    "missing_args_proper_use": "The correct usage would be: `%0`!",
+    "guild_only": "Sorry, I can only run this command in servers!",
+    "dm_only": "I can only run this command in private chat with you!",
+    "need_permission": "You are not authorized to execute this command!\nYou need the following permissions to execute this command: %0",
+    "admin_only": "You are not authorized to execute this command!\nOnly bot admins can execute this command.",
+    "nsfw": "Sorry, you can execute this command only in NSFW channels!"
+  },
+  "mods_help": {
+    "modifications": "Modifications",
+    "admin_only": "Only executable by bot admins",
+    "args_needed": "Requires arguments",
+    "args_max_length": "Maximum number of arguments: `%0`",
+    "args_min_length": "Minimum number of arguments: `%0`",
+    "cooldown": "Cooldown: `%0`",
+    "cooldown_global": "Global Cooldown: `%0`",
+    "dm_only": "Only executable in DMs",
+    "guild_only": "Only executable in servers",
+    "need_permission": "Requires the following permissions: `%0`",
+    "nsfw": "Only executable in NSFW channels"
+  },
+  "timer": {
+    "wrong_format": "your time format is wrong!",
+    "started": "Countdown started! End at: ",
+    "stopped": "Countdown stopped! End reached!",
+    "error": "Countdown stopped! An error occurred!",
+    "join_in": "Join in %d",
+    "join_now": "JOIN NOW!!!"
+  },
+  "commands": {
+    "echo": {
+      "help": "Sends back the passed arguments.",
+      "usage": "[text]"
+    },
+    "help": {
+      "help": "Without arguments, this command lists all executable commands. If a command is passed as argument, information about this command will returned.",
+      "usage": "[command name]",
+      "invalid_command": "That's not a valid command!",
+      "command": "Command",
+      "back_to_message": "Back to message",
+      "jump_to_dm": "Jump to DM",
+      "intro": "List with all commands:\n%0\nYou can send %1 to get information about a specific command!",
+      "dm": {
+        "success": "I've sent you a DM!",
+        "fail_console": "Could not send help DM to %0",
+        "fail_reply": "It seems like I can't DM you! Do you have DMs disabled?"
+      },
+      "success": {
+        "name": "**Name:**",
+        "aliases": "**Aliases:**",
+        "description": "**Description:**",
+        "usage": "**Usage:**"
+      },
+      "menu": {
+        "placeholder": "Select commands for more detail",
+        "all_label": "All Commands",
+        "all_description": "List with all commands"
+      }
+    },
+    "ping": {
+      "help": "Get the bot's ping.",
+      "websocket": "Websocket heartbeat: %0ms",
+      "pinging": "Pinging...",
+      "roundtrip": "Roundtrip latency: %0ms"
+    },
+    "reload": {
+      "help": "Reloads a command",
+      "usage": "[command name]",
+      "invalid_command": "There is no command with this name or alias %0!",
+      "success": "%0 was reloaded!",
+      "fail": "There was an error while reloading the command %0:\n%1"
+    },
+    "lang": {
+      "help": "Without arguments, this command outputs your currently set language. With an argument, this command sets your language to the passing language, if it exists.\nSupported languages:",
+      "usage": "[language]",
+      "invalid": "This language is not supported!",
+      "set": "Your language has been been set to: %0",
+      "get": "Your current language is: %0",
+      "error": "Error, I could not change your language (%0)!"
+    },
+    "prefix": {
+      "help": "Without arguments, this command prints the current prefix of the guild. With an argument, this command sets the prefix of the guild to the given one",
+      "usage": "[prefix]",
+      "too_long": "The passed prefix is too long!",
+      "get": "The prefix of this server is: %0",
+      "set": "The prefix of this server has been set to: %0"
+    },
+    "bound": {
+      "help": "Bound existent voice channel to timer",
+      "usage": "[channel_id]|[time_format]",
+      "wrong_args": "Wrong args. You should use this format: ",
+      "can't_find_channel": "Can't find the given channel id"
+    },
+    "create": {
+      "help": "Create a voice channel and bound it to timer. In the optional custom text %d stands for the remaining time.",
+      "usage": "[time_format](|[custom_text])"
+    },
+    "stop": {
+      "help": "Stop all timers",
+      "stopped": "All timers stopped!!"
+    }
+  }
+}

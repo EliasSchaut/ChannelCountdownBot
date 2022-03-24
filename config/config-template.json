@@ -1,13 +1,48 @@
 {
-  "prefix": "YOUR_PREFIX",
-  "token": "YOUR_TOKEN",
-  "commands_path": "./commands",
-  "lang": "en",
-  "admin_ids": [ ],
-  "bot_id": "THE_BOTS_DISCORD_ID",
+  "prefix": "<YOUR_PREFIX>",
+  "client_id": "<YOUR_CLIENT_ID>",
+  "token": "<YOUR_TOKEN>",
+  "enable_prefix_change": true,
 
+  "bot_id": "THE_BOTS_DISCORD_ID",
   "allow_connect": false,
   "allow_stream": true,
   "log": false,
-  "log_channel": "CHANNEL_ID"
+  "log_channel": "CHANNEL_ID",
+
+
+  "enable_logging": true,
+  "log_file_name": "combined.log",
+
+  "role_ids_admin": [ "" ],
+  "user_ids_admin": [ "" ],
+
+  "enable_activity": true,
+  "activity": {
+    "name": "<prefix>help",
+    "type": "PLAYING"
+  },
+
+  "help": {
+    "show_only_permitted_commands": true,
+    "send_to_dm": false,
+    "show_cmd_modifications": true
+  },
+
+  "embed": {
+    "color": "RANDOM",
+    "author_name": "Voice_Channel_Countdown",
+    "avatar_url": ""
+  },
+
+  "default_lang": "en",
+  "enable_lang_change": true,
+  "lang_paths": {
+    "de": "text_de.json",
+    "en": "text_en.json"
+  },
+
+  "enable_standard_commands": true,
+  "enable_slash_commands": false,
+  "auto_slash_options": false
 }

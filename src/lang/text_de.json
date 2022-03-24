@@ -1,0 +1,111 @@
+{
+  "command_create": {
+    "error": "Es gab einen Fehler beim Versuch, diesen Befehl auszuführen!"
+  },
+  "error": {
+    "admin_only": "Du bist nicht berechtigt, diesen Befehl auszuführen!\nNur Bot-Admins können diesen Befehl ausführen.",
+    "args_needed": "Dieser Befehl benötigt Argumente! Du hast aber keine abgegeben.",
+    "args_min_length": "Dieser Befehl benötigt mindestens %0 Argumente! Du hast aber nur %1 abgegeben.",
+    "args_max_length": "Diesem Befehl können maximal %0 Argumente übergeben werden! Du hast aber %1 abgegeben.",
+    "cooldown": "Auf diesen Befehl gibt es einen Cooldown. Du musst noch `%0` warten, um den Befehl wieder ausführen zu können.",
+    "missing_args_proper_use": "Die korrekte Verwendung wäre: `%0`!",
+    "dm_only": "Ich kann diesen Befehl nur im privaten Chat mit dir ausführen!",
+    "guild_only": "Ich kann diesen Befehl leider nur in Servern ausführen!",
+    "need_permission": "Du bist nicht berechtigt, diesen Befehl auszuführen!\nDu benötigst folgende Rechte um diesen Befehl auszuführen: %0",
+    "nsfw": "Diesen Befehl kannst du leider nur in NSFW-Kanälen ausführen!"
+  },
+  "mods_help": {
+    "modifications": "Modifikationen",
+    "admin_only": "Nur von Bot-Admins ausführbar",
+    "args_needed": "Benötigt Argumente",
+    "args_max_length": "Maximale Anzahl an Argumenten: `%0`",
+    "args_min_length": "Minimale Anzahl an Argumenten: `%0`",
+    "cooldown": "Cooldown: `%0`",
+    "cooldown_global": "Globaler-Cooldown: `%0`",
+    "dm_only": "Nur in DMs ausführbar",
+    "guild_only": "Nur in Servern ausführbar",
+    "need_permission": "Benötigt folgende Rechte: `%0`",
+    "nsfw": "Nur in NSFW-Channeln ausführbar"
+  },
+  "timer": {
+    "wrong_format": "Das Zeitformat ist falsch!",
+    "started": "Countdown gestartet! Ende am: ",
+    "stopped": "Countdown gestoppt! Ende erreicht!",
+    "error": "Countdown stopped! Ein Fehler trat auf!",
+    "join_in": "in %d joinen",
+    "join_now": "JETZT JOINEN!!!"
+  },
+  "commands": {
+    "echo": {
+      "help": "Sendet die übergebenen Argumente zurück.",
+      "usage": "[Text]"
+    },
+    "help": {
+      "help": "Ohne Argumente listet dieser Befehl alle ausführbaren Befehle auf. Falls ein Befehl als Argument übergeben wird, werden Informationen zu diesem Befehl zurückgegeben.",
+      "usage": "[Name eines Befehls]",
+      "invalid_command": "Das ist kein gültiger Befehl!",
+      "command": "Kommando",
+      "back_to_message": "Zurück zur Nachricht",
+      "jump_to_dm": "Springe zur DM",
+      "intro": "Liste mit allen Befehlen:\n%0\nDu kannst %1 senden, um Informationen zu einem bestimmten Befehl zu erhalten!",
+      "dm": {
+        "success": "Dir wurde eine DM geschickt!",
+        "fail_console": "Es konnte keine DM senden an %0",
+        "fail_reply": "Es scheint so, als ob ich dir keine DMs schicken kann! Hast du DMs deaktiviert?"
+      },
+      "success": {
+        "name": "**Name:**",
+        "aliases": "**Aliasse:**",
+        "description": "**Beschreibung:**",
+        "usage": "**Verwendung:**"
+      },
+      "menu": {
+        "placeholder": "Wähle Befehle für weitere Details",
+        "all_label": "Alle Kommandos",
+        "all_description": "Liste mit allen Befehlen"
+      }
+    },
+    "ping": {
+      "help": "Rufe den Ping des Bots ab.",
+      "websocket": "Websocket Heartbeat: %0ms",
+      "pinging": "Senden...",
+      "roundtrip": "Roundtrip Latenz: %0ms"
+    },
+    "reload": {
+      "help": "Lädt einen Befehl erneut.",
+      "usage": "[Name eines Befehls]",
+      "invalid_command": "Es gibt keinen Befehl mit diesem Namen oder Alias %0!",
+      "success": "%0 wurde neu geladen!",
+      "fail": "Es gab einen Fehler beim Nachladen des Befehls %0:\n%1"
+    },
+    "lang": {
+      "help": "Ohne Argumente gibt dieser Befehl deine aktuell gesetzte Sprache aus. Mit einem Argument setzt dieser Befehl deine Sprache auf die übergebende Sprache, sofern diese existiert.\nUnterstütze Sprachen: ",
+      "usage": "[Sprache]",
+      "invalid": "Diese Sprache existiert nicht!",
+      "set": "Deine Sprache wurde gesetzt auf: %0",
+      "get": "Deine aktuelle Sprache ist: %0",
+      "error": "Error, ich konnte deine Sprache nicht ändern (%0)!"
+    },
+    "prefix": {
+      "help": "Ohne Argumente gibt dieser Befehl den aktuellen Prefix des aus. Mit einem Argument setzt dieser Befehl den Prefix des Servers auf den Übergebenen",
+      "usage": "[Prefix]",
+      "too_long": "Der übergebene Prefix ist zu lang!",
+      "get": "Der Prefix dieses Servers ist: %0",
+      "set": "Der Prefix dieses Server wurde gesetzt auf: %0"
+    },
+    "bound": {
+      "help": "Vorhandenen Sprachkanal an Timer binden",
+      "usage": "[kanal_id]|[zeit_format]",
+      "wrong_args": "Falsche Argumente. Sie sollten dieses Format verwenden: ",
+      "can't_find_channel": "Die übergebene Kanal-ID konnte nicht gefunden werden!"
+    },
+    "create": {
+      "help": "Erstelle einen Sprachkanal und binde ihn an einen Timer. Im optionalen custom text steht %d für die übrige Zeit.",
+      "usage": "[zeit_format](|[custom_text])"
+    },
+    "stop": {
+      "help": "Alle Timer stoppen",
+      "stopped": "Alle Timer gestoppt!"
+    }
+  }
+}
